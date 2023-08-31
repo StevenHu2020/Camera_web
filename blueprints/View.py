@@ -56,7 +56,6 @@ def knowledge_article(id):
     #     print(camera.Brand)
     return render_template('knowledgePage.html',  article = article)
 
-# TODO 结果
 @main_blueprint.route('/result')
 def result():
     # get chocie for choice pages
