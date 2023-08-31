@@ -10,6 +10,23 @@
     <!-- print 4 results for that -->
     <table>
         <tbody>
+
+        {% for title in titles %}
+        <tr>
+            {% for camera in title %}
+            <td>{{ camera }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+        {% for image in images %}
+        <tr>
+            {% for camera in images %}
+            <td>{{ camera }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
         {% for data in datas %}
         <tr>
             {% for camera in data %}
