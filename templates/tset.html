@@ -1,0 +1,31 @@
+    <form action="{{ url_for('main.condition') }}" method="POST">
+        <fieldset>
+            <legend>Identify Your Needs</legend>
+            <div class="form-group">
+                <label>Low-light shooting
+                    <input type="radio" id="LowLight" name="choice1" value="True" />
+                </label><br />
+            </div>
+            <div class="form-group">
+                <label>Lightweight body
+                    <input type="radio" id="LightCamera" name="choice2" value="True" />
+                </label><br />
+            </div>
+            <div class="form-group">
+                <label>Don't want to spend too much
+                    <input type="radio" id="QPRatio" name="choice3" value="True" />
+                </label><br />
+            </div>
+            <div class="form-group">
+                <label>Output of large-size works
+                    <input type="radio" id="LargePiece" name="choice4" value="True" />
+                </label><br />
+            </div>
+            <div class="form-group">
+                <label>sports photography
+                    <input type="radio" id="Sport" name="choice5" value="True" />
+                </label><br />
+            </div>
+        </fieldset>
+        <input type="submit" value="Confirmation of requirements">
+    </form>

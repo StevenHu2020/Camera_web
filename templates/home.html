@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home page
+{% endblock %}
+
+{% block content %}
+    <a></a>
+    <div>
+    <h1>Welcome To Use Camera Choose System</h1>
+    </div>
+    <div>
+    <p>Selecting the right camera is of paramount importance for novice photographers, as it directly impacts the process of photographic learning and the quality of the captured images. However, it is worth emphasizing that choosing the right camera does not necessarily equate to acquiring the most expensive one. What is crucial is a thorough understanding of one's needs and budget, allowing for the meticulous selection of a camera that truly suits those requirements. Subsequently, through continuous learning and practical experience, one can steadily enhance their photography skills. It is essential to recognize that a camera is merely a tool; the real key to successful photography lies in the photographer's own vision and technical expertise.</p>
+    </div>
+    <div id="home buttons">
+    <a class="btn btn-primary" href="{{ url_for("main.knowledge") }}">Knowledge about parameters</a>
+    <a class="btn btn-primary" href="{{ url_for("main.select") }}">Select your camera</a>
+    <a class="btn btn-primary" href="{{ url_for("main.search") }}">Camera parameter search</a>
+    </div>
+{% endblock %}

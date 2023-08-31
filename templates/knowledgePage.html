@@ -1,0 +1,16 @@
+{% extends "base2.html" %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+<!-- Read the database directly and stop escaping -->
+{% autoescape false %}
+{{ article.content }}
+{% endautoescape %}
+<!-- Back to Knowledge List -->
+<a href="{{ url_for("main.knowledge") }}">
+    <button id="fixed">back</button>
+</a>
+{% endblock %}

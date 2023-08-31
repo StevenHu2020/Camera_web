@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Select Your Choice Way
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>If you clearly know your requirement?</h1>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="{{ url_for("main.Choice_input") }}">Yes, I have.</a>
+        <a class="btn btn-primary" href="{{ url_for("main.video") }}">No, I haven't.</a>
+    </div>
+{% endblock %}

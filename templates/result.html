@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Filtering results
+{% endblock %}
+
+{% block content %}
+    <h1>The following cameras are the best match for your needs</h1>
+
+    <!-- print 4 results for that -->
+    <table>
+        <tbody>
+        {% for data in datas %}
+        <tr>
+            {% for camera in data %}
+            <td>{{ camera }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

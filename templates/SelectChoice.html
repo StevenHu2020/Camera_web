@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Forms -->
+<!-- action 规定提交后所使用的逻辑处理 -->
+<form method="post">
+    <fieldset>
+        <legend>Identify Your Needs</legend>
+        <div class="form-group">
+            <label>Low-light shooting
+                <input type="radio" id="LowLight" name="LowLight" value="True" />
+            </label><br />
+        </div>
+        <div class="form-group">
+            <label>Lightweight body
+                <input type="radio" id="LightCamera" name="LightCamera" value="True" />
+            </label><br />
+        </div>
+        <div class="form-group">
+            <label>Don't want to spend too much
+                <input type="radio" id="QPRatio" name="QPRatio" value="True" />
+            </label><br />
+        </div>
+        <div class="form-group">
+            <label>Output of large-size works
+                <input type="radio" id="LargePiece" name="LargePiece" value="True" />
+            </label><br />
+        </div>
+        <div class="form-group">
+            <label>sports photography
+                <input type="radio" id="Sport" name="Sport" value="True" />
+            </label><br />
+        </div>
+    </fieldset>
+    <input type="submit" value="Confirmation of requirements">
+</form>
+
+ <!-- Back to select main page -->
+<a href="{{ url_for("main.select") }}">
+    <button id="fixed">back</button>
+</a>
+
+{% endblock %}

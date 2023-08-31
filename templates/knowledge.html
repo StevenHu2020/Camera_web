@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+    Knowledge of parameters
+{% endblock %}
+
+
+{% block content %}
+    <h1>knowledge</h1>
+    <hr>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+        	<tr>
+                <td>{{ article.id }}</td>
+                <td><a href="{{ url_for("main.knowledge_article", id=article.id) }}">{{ article.title }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
