@@ -5,10 +5,10 @@
 
 
 {% block content %}
-    <h1>knowledge</h1>
+    <h1 class="display-3"><strong>knowledge</strong></h1>
     <hr>
-    <table>
-        <thead>
+    <table class="table table-striped">
+        <thead class="table-dark">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
@@ -18,7 +18,7 @@
         {% for article in articles %}
         	<tr>
                 <td>{{ article.id }}</td>
-                <td><a href="{{ url_for("main.knowledge_article", id=article.id) }}">{{ article.title }}</a></td>
+                <td><a class="link-dark link-opacity-50-hover link-offset-2 link-underline link-underline-opacity-0 link-opacity-80" href="{{ url_for("main.knowledge_article", id=article.id) }}">{{ article.title }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
