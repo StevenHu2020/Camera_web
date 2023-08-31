@@ -32,3 +32,9 @@ p{
 	font-size: 16px;
 	cursor: pointer;
 }
+
+/*https://developer.mozilla.org/en-US/docs/web/css/width*/
+#camera_picture{
+	width: auto;
+	height: 200px;
+}

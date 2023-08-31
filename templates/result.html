@@ -11,21 +11,18 @@
     <table>
         <tbody>
 
-        {% for title in titles %}
-        <tr>
-            {% for camera in title %}
-            <td>{{ camera }}</td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
 
-        {% for image in images %}
         <tr>
-            {% for camera in images %}
+            {% for camera in titles %}
             <td>{{ camera }}</td>
             {% endfor %}
         </tr>
-        {% endfor %}
+
+        <tr>
+            {% for test1 in images %}
+            <td><img src="{{ test1 }}" alt="Camera_picture" id="camera_picture"></td>
+            {% endfor %}
+        </tr>
 
         {% for data in datas %}
         <tr>

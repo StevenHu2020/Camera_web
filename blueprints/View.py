@@ -90,7 +90,7 @@ def result():
     Price = [camera.Price for camera in Camera_Date]
 
     # translate it to a two-dimensional array
-    # title and images need another group
+    # title need another group
 
     datas = [names, brand, Type, ImageSensor, EffectivePixels, FrameAdvanceRate, ShutterSpeed, Dimensions, Weight, Price]
 
