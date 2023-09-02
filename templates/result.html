@@ -20,7 +20,10 @@
 
         {% for data in datas %}
         <tr>
-            {% for camera in data %}
+            {% for camera in data[:1] %}
+            <td><strong>{{ camera }}</strong></td>
+            {% endfor %}
+            {% for camera in data[1:] %}
             <td>{{ camera }}</td>
             {% endfor %}
         </tr>
