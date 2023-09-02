@@ -9,9 +9,9 @@
         <div>
             <h1 class="display-3">If you clearly know your requirement?</h1>
         </div>
-        <div>
-            <a class="btn btn-primary" href="{{ url_for("main.Choice_input") }}">Yes, I have.</a>
-            <a class="btn btn-primary" href="{{ url_for("main.video") }}">No, I haven't.</a>
+        <div id="select buttons" class="d-grid gap-2 col-3 mx-auto">
+            <a type="button" class="btn btn-outline-primary btn-lg" href="{{ url_for("main.Choice_input") }}">Yes, I have.</a>
+            <a type="button" class="btn btn-outline-primary btn-lg" href="{{ url_for("main.video") }}">No, I haven't.</a>
         </div>
     </div>
 {% endblock %}

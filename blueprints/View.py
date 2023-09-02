@@ -75,21 +75,21 @@ def result():
         Camera_Date = [i for i in Camera_Date if i.FrameAdvanceRate >= 7]
 
     # Reorganization of data
-    images = [" "] +[camera.Herf for camera in Camera_Date]
+    images = [camera.Herf for camera in Camera_Date]
     names = ["Name"] + [camera.Name for camera in Camera_Date]
     brand = ["Brand"] + [camera.Brand for camera in Camera_Date]
     Type = ["Type"] + [camera.Type for camera in Camera_Date]
     ImageSensor = ["Image Sensor"] + [camera.ImageSensor for camera in Camera_Date]
-    EffectivePixels = ["Effective Pixels"] + [camera.EffectivePixels for camera in Camera_Date]
+    EffectivePixels = ["Effective Pixels (MP)"] + [camera.EffectivePixels for camera in Camera_Date]
     FrameAdvanceRate = ["Frame Advance Rate"] + [camera.FrameAdvanceRate for camera in Camera_Date]
     ShutterSpeed = ["Shutter Speed"] + [camera.ShutterSpeed for camera in Camera_Date]
-    Dimensions = ["Dimensions"] + [camera.Dimensions for camera in Camera_Date]
-    Weight = ["Weight"] + [camera.Weight for camera in Camera_Date]
-    Price = ["Price"] + [camera.Price for camera in Camera_Date]
+    Dimensions = ["Dimensions (W x H x D)"] + [camera.Dimensions for camera in Camera_Date]
+    Weight = ["Weight (g)"] + [camera.Weight for camera in Camera_Date]
+    Price = ["Price (£)"] + [camera.Price for camera in Camera_Date]
 
     # translate it to a two-dimensional array
     # title need another group
 
     datas = [names, brand, Type, ImageSensor, EffectivePixels, FrameAdvanceRate, ShutterSpeed, Dimensions, Weight, Price]
 
-    return render_template('result.html', datas= datas, titles = titles, images = images)
+    return render_template('result.html', datas= datas, images = images)
