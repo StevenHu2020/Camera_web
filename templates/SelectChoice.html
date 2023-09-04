@@ -7,31 +7,30 @@
 {% block content %}
 
 <!-- Forms -->
-<!-- action 规定提交后所使用的逻辑处理 -->
 <form method="post">
     <fieldset>
-        <legend>Identify Your Needs</legend>
-        <div class="form-group">
+        <legend><span class="display-3"><strong>Identify Your Needs</strong></span></legend>
+        <div class="form-check">
             <label>Low-light shooting
                 <input type="radio" id="LowLight" name="LowLight" value="True" />
             </label><br />
         </div>
-        <div class="form-group">
+        <div class="form-check">
             <label>Lightweight body
                 <input type="radio" id="LightCamera" name="LightCamera" value="True" />
             </label><br />
         </div>
-        <div class="form-group">
+        <div class="form-check">
             <label>Don't want to spend too much
                 <input type="radio" id="QPRatio" name="QPRatio" value="True" />
             </label><br />
         </div>
-        <div class="form-group">
+        <div class="form-check">
             <label>Output of large-size works
                 <input type="radio" id="LargePiece" name="LargePiece" value="True" />
             </label><br />
         </div>
-        <div class="form-group">
+        <div class="form-check">
             <label>sports photography
                 <input type="radio" id="Sport" name="Sport" value="True" />
             </label><br />
@@ -41,8 +40,6 @@
 </form>
 
  <!-- Back to select main page -->
-<a href="{{ url_for("main.select") }}">
-    <button id="fixed">back</button>
-</a>
+<div style="text-align:center"><a type="button" class="btn btn-outline-primary btn-lg col-3" href="{{ url_for("main.select") }}">Return</a></div>
 
 {% endblock %}

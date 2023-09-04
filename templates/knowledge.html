@@ -5,23 +5,28 @@
 
 
 {% block content %}
-    <h1 class="display-3"><strong>knowledge</strong></h1>
-    <hr>
-    <table class="table table-striped">
-        <thead class="table-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-        	<tr>
-                <td><a class="display-6 link-dark link-underline-opacity-0">{{ article.id }}</a></td>
-                <td><a class="display-6 link-dark link-opacity-50-hover link-offset-2 link-underline link-underline-opacity-0 link-opacity-80" href="{{ url_for("main.knowledge_article", id=article.id) }}"><strong>{{ article.title }}</strong></a></td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="container-fluid">
+        <h1 class="display-3 row"><strong>knowledge</strong></h1>
+        <hr>
+        <div class="col-10 mx-auto">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for article in articles %}
+                    <tr>
+                        <td><a class="display-6 link-dark link-underline-opacity-0">{{ article.id }}</a></td>
+                        <td><a class="display-6 link-dark link-opacity-50-hover link-offset-2 link-underline link-underline-opacity-0 link-opacity-80" href="{{ url_for("main.knowledge_article", id=article.id) }}"><strong>{{ article.title }}</strong></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="text-align:center"><a type="button" class="btn btn-outline-primary btn-lg col-3" href="{{ url_for("main.index") }}">Return home page</a></div>
 {% endblock %}
 
