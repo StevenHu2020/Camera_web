@@ -5,30 +5,35 @@
 {% endblock %}
 
 {% block content %}
-    <h1>The following cameras are the best match for your needs</h1>
+    <h1 class="text-center">The following cameras are the best match for your needs</h1>
 
-    <!-- print 4 results for that -->
-    <table class="table table-bordered">
-        <tbody>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <!-- image for cameras -->
+                <tr>
+                    <td> </td>
+                    {% for test1 in images %}
+                    <td><img src="{{ test1 }}" alt="Camera_picture" id="camera_picture"></td>
+                    {% endfor %}
+                </tr>
 
-        <tr>
-            <td> </td>
-            {% for test1 in images %}
-            <td><img src="{{ test1 }}" alt="Camera_picture" id="camera_picture"></td>
-            {% endfor %}
-        </tr>
+                <!-- detail for cameras -->
+                {% for data in datas %}
+                <tr>
+                    {% for camera in data[:1] %}
+                    <td><strong>{{ camera }}</strong></td>
+                    {% endfor %}
+                    {% for camera in data[1:] %}
+                    <td>{{ camera }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-        {% for data in datas %}
-        <tr>
-            {% for camera in data[:1] %}
-            <td><strong>{{ camera }}</strong></td>
-            {% endfor %}
-            {% for camera in data[1:] %}
-            <td>{{ camera }}</td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <div style="text-align:center"><a type="button" class="btn btn-outline-primary btn-lg col-3" href="{{ url_for("main.Choice_input") }}">Return</a></div>
+    <div class="text-center mt-4">
+        <a type="button" class="btn btn-outline-primary btn-lg col-3" href="{{ url_for("main.Choice_input") }}">Return</a>
+    </div>
 {% endblock %}

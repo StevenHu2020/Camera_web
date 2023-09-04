@@ -1,3 +1,24 @@
+{#{% extends "base.html" %}#}
+{##}
+{#{% block title %}#}
+{#    Select Your Choice Way#}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#<div class="container-fluid">#}
+{#    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">#}
+{#        <div class="col-md-12 text-center">#}
+{#            <h1 class="display-3">If you clearly know your requirement?</h1>#}
+{#            <div id="select-buttons" class="d-grid gap-2 col-2 mx-auto">#}
+{#                <a type="button" class="btn btn-outline-primary btn-lg" href="{{ url_for("main.Choice_input") }}">Yes, I have.</a>#}
+{#                <a type="button" class="btn btn-outline-primary btn-lg" href="{{ url_for("main.video") }}">No, I haven't.</a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#     <div style="text-align:center"><a type="button" class="btn btn-outline-secondary btn-lg col-3" href="{{ url_for("main.index") }}">Return home page</a></div>#}
+{#</div>#}
+{#{% endblock %}#}
+
 {% extends "base.html" %}
 
 {% block title %}
@@ -6,12 +27,20 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="align-self-center">
-        <h1 class="display-3 ">If you clearly know your requirement?</h1>
-        <div id="select buttons" class="d-grid gap-2 col-2 mx-auto">
-            <a type="button" class="btn btn-outline-primary btn-lg" href="{{ url_for("main.Choice_input") }}">Yes, I have.</a>
-            <a type="button" class="btn btn-outline-primary btn-lg" href="{{ url_for("main.video") }}">No, I haven't.</a>
+    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col-md-12 text-center">
+            <h1 class="display-3">If you clearly know your requirement?</h1>
+            <div style="height: 20px;"></div>
+            <div id="select-buttons" class="d-grid gap-2 col-3 mx-auto">
+                <a type="button" class="btn btn-outline-primary btn-lg" href="{{ url_for("main.Choice_input") }}">Yes, I have.</a>
+                <a type="button" class="btn btn-outline-primary btn-lg" href="{{ url_for("main.video") }}">No, I haven't.</a>
+            </div>
+            <!-- Add an empty div to create space -->
+            <div style="height: 20px;"></div>
+            <!-- Move the "Return home page" button below the empty div -->
+            <a type="button" class="btn btn-outline-secondary btn-lg col-3" href="{{ url_for("main.index") }}">Return home page</a>
         </div>
     </div>
 </div>
 {% endblock %}
+
