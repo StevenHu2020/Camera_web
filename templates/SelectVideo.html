@@ -1,12 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <div>
-        <h1>video</h1>
+{% extends "base.html" %}
+
+{% block title %}
+    SelectVideo
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Title -->
+    <div class="row">
+        <h1 class="display-3"><strong>Camera Matcher</strong></h1>
     </div>
-</body>
-</html>
+    <div class="row justify-content-end">
+        <div class="col offset-md-7">
+            <div class="text-muted"><h4>—— Do you really need high pixel density?</h4></div>
+        </div>
+    </div>
+    <hr>
+    <div style="height: 20px;"></div>
+
+    <!-- Video for 4k show and explain -->
+    <div class="row">
+        <div class="display-4">4k</div>
+    </div>
+    <div class="row" id="video_4k_1">
+        <iframe width="1911" height="819" src="https://www.youtube-nocookie.com/embed/AWfxm-zziUk?si=VBQxAmsdTWJjkrn-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div style="height: 20px;"></div>
+
+    <!-- Video for 1080P show and explain -->
+    <div class="row">
+        <div class="display-4">1080P</div>
+    </div>
+    <div class="row" id="video_1080P_1">
+        <iframe width="1920" height="1080" src="https://www.youtube.com/embed/xZkEqQOXNyk?si=8AGaW7uL379KYYex" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div style="height: 20px;"></div>
+
+    <!-- explain the different-->
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <p id="VideoText">While it's not necessary to relentlessly pursue high resolution when purchasing a camera, it's essential to have a basic understanding: the device's maximum shooting resolution should ideally exceed the desired output video resolution. Opting for a resolution one step higher allows for better detail retention after compression, but going significantly beyond your intended output resolution offers little practical benefit in video production.</p>
+            <p id="VideoText">For instance, if you intend to create scenic videos in 4K resolution, your camera should ideally support shooting in 6K or higher. On the other hand, if your goal is to produce 1080p vlogs documenting your daily life, selecting a device capable of 4K video recording is typically sufficient.</p>
+            <p id="VideoText">It's important to note that excessively high resolutions also demand more from your video editing and playback equipment. If you don't require top-tier video quality, it's advisable to avoid unnecessary expenses.</p>
+        </div>
+    </div>
+
+    <!-- return bottom -->
+    <div class="row justify-content-center">
+        <a type="button" class="btn btn-outline-secondary btn-lg col-3" href="{{ url_for("main.select") }}">Return home page</a>
+    </div>
+    <div style="height: 50px;"></div>
+</div>
+{% endblock %}

@@ -41,4 +41,13 @@ p{
 	height: 200px;
 }
 
+#VideoText{
+	text-indent:2em;
+    padding:0;
+    margin:24px;
+    color: black;
+    font-family: "Times New Roman", serif;
+	font-size:30px;
+}
+
 
