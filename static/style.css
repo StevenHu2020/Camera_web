@@ -41,6 +41,11 @@ p{
 	height: 200px;
 }
 
+#camera_info{
+	width: 500px;
+	height: auto;
+}
+
 #VideoText{
 	text-indent:2em;
     padding:0;

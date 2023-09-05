@@ -1,15 +1,92 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Camera data
+    Camera Data
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div>
-            <div>
-
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center"><h1 class="display-5">Camera Product Information</h1></div>
+        </div>
+        <div class="row">
+            <div class="col text-center"><img src="{{ camera.Herf }}" alt="Camera_picture" id="camera_info" class="img-fluid"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th class="bg-dark text-white">Model</th>
+                            <td class="bg-Secondary">{{ camera.Name }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Brand</th>
+                            <td class="bg-Secondary">{{ camera.Brand }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Type</th>
+                            <td class="bg-Secondary">{{ camera.Type }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Image Sensor</th>
+                            <td class="bg-Secondary">{{ camera.ImageSensor }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Total Pixels</th>
+                            <td class="bg-Secondary">{{ camera.TotalPixels }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Effective Pixels</th>
+                            <td class="bg-Secondary">{{ camera.EffectivePixels }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Shutter Speed</th>
+                            <td class="bg-Secondary">{{ camera.ShutterSpeed }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Frame Advance Rate</th>
+                            <td class="bg-Secondary">{{ camera.FrameAdvanceRate }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Image Size (picture)</th>
+                            <td class="bg-Secondary">{{ camera.ImageSize }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">File Formats (picture)</th>
+                            <td class="bg-Secondary">{{ camera.FileFormats }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Frame Size and Frame Rate (movie)</th>
+                            <td class="bg-Secondary">{{ camera.FrameSizeAndFrameRate }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">File Formats (Movie)</th>
+                            <td class="bg-Secondary">{{ camera.FileFormatsMovie }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">ISO</th>
+                            <td class="bg-Secondary">{{ camera.ISO }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Dimensions (W x H x D)</th>
+                            <td class="bg-Secondary">{{ camera.Dimensions }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Weight (g)</th>
+                            <td class="bg-Secondary">{{ camera.Weight }}</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-dark text-white">Price (£)</th>
+                            <td class="bg-Secondary">{{ camera.Price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </div>
+        <!-- 返回按钮 -->
+        <div class="row justify-content-center">
+            <a type="button" class="btn btn-outline-secondary btn-lg col-3" href="{{ url_for("main.search") }}">Return</a>
         </div>
     </div>
 {% endblock %}
