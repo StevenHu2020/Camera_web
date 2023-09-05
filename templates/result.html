@@ -5,19 +5,19 @@
 {% endblock %}
 
 {% block content %}
+    <!-- title -->
     <h1 class="text-center">The following cameras are the best match for your needs</h1>
-
+    <!-- table for result -->
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <tbody>
                 <!-- image for cameras -->
                 <tr>
                     <td> </td>
-                    {% for test1 in images %}
-                    <td><img src="{{ test1 }}" alt="Camera_picture" id="camera_picture"></td>
+                    {% for image in images %}
+                    <td><img src="{{ image }}" alt="Camera_picture" id="camera_picture"></td>
                     {% endfor %}
                 </tr>
-
                 <!-- detail for cameras -->
                 {% for data in datas %}
                 <tr>
@@ -32,8 +32,9 @@
             </tbody>
         </table>
     </div>
-
+    <!-- return button -->
     <div class="text-center mt-4">
-        <a type="button" class="btn btn-outline-primary btn-lg col-3" href="{{ url_for("main.Choice_input") }}">Return</a>
+        <a type="button" class="btn btn-outline-secondary btn-lg col-3" href="{{ url_for("main.Choice_input") }}">Return</a>
     </div>
+    <div style="height: 50px;"></div>
 {% endblock %}

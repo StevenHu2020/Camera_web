@@ -26,7 +26,15 @@ def select():
 
 @main_blueprint.route('/search')
 def search():
-    return render_template("search.html")
+    # get all cameras parameter
+    items = Camera.query.all()
+    return render_template("search.html", items = items)
+
+@main_blueprint.route('/search/<Name>')
+def search_item(Name):
+    camera = Camera.query.get_or_404(id)
+    print(camera)
+    return render_template("camera.html", camera = camera)
 
 
 @main_blueprint.route('/Video')
@@ -43,7 +51,8 @@ def Choice_input():
         LargePiece = True if "LargePiece" in request.form.keys() and request.form['LargePiece'] == 'True' else False
         Sport = True if "Sport" in request.form.keys() and request.form['Sport'] == 'True' else False
         list_option = {'LowLight': LowLight, 'LightCamera': LightCamera, 'QPRatio':QPRatio, 'LargePiece':LargePiece, 'Sport':Sport}
-        print(list_option)
+        # check point
+        # print(list_option)
         return redirect(url_for('main.result',**list_option))
 
     return render_template('SelectChoice.html')
@@ -51,6 +60,7 @@ def Choice_input():
 @main_blueprint.route('/knowledge/<id>')
 def knowledge_article(id):
     article = Article.query.get_or_404(id)
+    # check point
     # brand = Camera.query.all()
     # for camera in brand:
     #     print(camera.Brand)
@@ -58,7 +68,7 @@ def knowledge_article(id):
 
 @main_blueprint.route('/result')
 def result():
-    # get chocie for choice pages
+    # get chocie for choice pages and get cameras data for database
     kwargs = request.args
     Camera_Date = Camera.query.all()
 
