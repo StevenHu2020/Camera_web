@@ -32,7 +32,7 @@ def search():
 
 @main_blueprint.route('/search/<Name>')
 def search_item(Name):
-    camera = Camera.query.get_or_404(id)
+    camera = Camera.query.get_or_404(Name)
     print(camera)
     return render_template("camera.html", camera = camera)
 

@@ -19,15 +19,15 @@
                     <th>image</th>
                     <th>Name</th>
                     <th>Brand</th>
-                    <th>ImageSensor</th>
-                    <th>Price</th>
+                    <th>ImageSensor </th>
+                    <th>Price (£)</th>
                 </tr>
             </thead>
             <tbody>
             {% for item in items %}
                 <tr>
-                    <td><a href="{{ url_for("main.search_item", Name=item.Name) }}"><img src="{{ item.Herf }}" alt="Camera_picture" id="camera_picture"></a></td>
-                    <td>{{ item.Name }}</td>
+                    <td><a href="{{ url_for("main.search_item", Name = item.Name) }}"><img src="{{ item.Herf }}" alt="Camera_picture" id="camera_picture"></a></td>
+                    <td><a href="{{ url_for("main.search_item", Name = item.Name) }}" class="link-dark link-opacity-50-hover link-offset-2 link-underline link-underline-opacity-0 link-opacity-80">{{ item.Name }}</a></td>
                     <td>{{ item.Brand }}</td>
                     <td>{{ item.ImageSensor }}</td>
                     <td>{{ item.Price }}</td>
