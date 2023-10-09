@@ -33,7 +33,6 @@ def search():
 @main_blueprint.route('/search/<Name>')
 def search_item(Name):
     camera = Camera.query.get_or_404(Name)
-    print(camera)
     return render_template("camera.html", camera = camera)
 
 
@@ -60,10 +59,6 @@ def Choice_input():
 @main_blueprint.route('/knowledge/<id>')
 def knowledge_article(id):
     article = Article.query.get_or_404(id)
-    # check point
-    # brand = Camera.query.all()
-    # for camera in brand:
-    #     print(camera.Brand)
     return render_template('knowledgePage.html',  article = article)
 
 @main_blueprint.route('/result')
